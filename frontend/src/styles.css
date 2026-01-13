@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.bg-radial {
+  background: radial-gradient(circle at top, rgba(29,185,84,0.2), transparent 55%),
+    radial-gradient(circle at 20% 30%, rgba(11,93,43,0.45), transparent 40%),
+    linear-gradient(135deg, #050705 0%, #0b0f0c 55%, #04170c 100%);
+}
+
+.glass {
+  background: rgba(13, 18, 15, 0.75);
+  border: 1px solid rgba(49, 67, 55, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(29, 185, 84, 0.4);
+}
+
+.fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.6s ease both;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
