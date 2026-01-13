@@ -65,3 +65,6 @@ Recompute clusters in real time with:
 
 ```bash
 docker compose up --build
+```
+### Dataset
+- name it tracks.csv and add it to backend/app/data/
