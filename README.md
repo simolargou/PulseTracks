@@ -68,3 +68,9 @@ docker compose up --build
 ```
 ### Dataset
 - name it tracks.csv and add it to backend/app/data/
+- Expected columns:
+- `track_id`, `artists`, `album_name`, `track_name`, `track_genre`
+- `popularity`, `duration_ms`, `explicit`
+- `danceability`, `energy`, `key`, `loudness`, `mode`
+- `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`
+- `tempo`, `time_signature`
