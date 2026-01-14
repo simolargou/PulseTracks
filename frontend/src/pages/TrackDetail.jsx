@@ -22,6 +22,7 @@ const TrackDetail = () => {
   const [target, setTarget] = useState(
     Object.fromEntries(vibeFeatures.map((item) => [item, 0]))
   )
+  const trackUrl = (id) => `https://open.spotify.com/track/${id}`
 
   const { data: trackData, isLoading, error } = useQuery({
     queryKey: ['track', trackId],
@@ -67,7 +68,17 @@ const TrackDetail = () => {
                 <p className="text-2xl font-display">{trackData.track.track_name}</p>
                 <p className="text-ash">{trackData.track.artists}</p>
               </div>
-              <div className="text-sm text-ash">Genre: {trackData.track.track_genre}</div>
+              <div className="flex items-center gap-3">
+                <div className="text-sm text-ash">Genre: {trackData.track.track_genre}</div>
+                <a
+                  href={trackUrl(trackData.track.track_id)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-emerald/40 px-4 py-2 text-xs uppercase tracking-widest text-moss transition hover:border-moss"
+                >
+                  Play
+                </a>
+              </div>
             </div>
           </div>
         )}
@@ -103,8 +114,20 @@ const TrackDetail = () => {
           <div className="space-y-3">
             {similarData?.items?.map((item) => (
               <div key={item.track.track_id} className="rounded-xl border border-emerald/30 bg-black/30 px-4 py-3">
-                <p className="font-medium">{item.track.track_name}</p>
-                <p className="text-ash text-sm">{item.track.artists}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-medium">{item.track.track_name}</p>
+                    <p className="text-ash text-sm">{item.track.artists}</p>
+                  </div>
+                  <a
+                    href={trackUrl(item.track.track_id)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-emerald/30 px-3 py-1 text-xs uppercase tracking-widest text-moss transition hover:border-moss"
+                  >
+                    Play
+                  </a>
+                </div>
                 <p className="text-xs text-ash">Cluster {item.cluster} · Distance {item.distance.toFixed(3)}</p>
               </div>
             ))}
@@ -140,8 +163,20 @@ const TrackDetail = () => {
           <div className="space-y-3">
             {recommendMutation.data?.items?.map((item) => (
               <div key={item.track.track_id} className="rounded-xl border border-emerald/30 bg-black/30 px-4 py-3">
-                <p className="font-medium">{item.track.track_name}</p>
-                <p className="text-ash text-sm">{item.track.artists}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-medium">{item.track.track_name}</p>
+                    <p className="text-ash text-sm">{item.track.artists}</p>
+                  </div>
+                  <a
+                    href={trackUrl(item.track.track_id)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-emerald/30 px-3 py-1 text-xs uppercase tracking-widest text-moss transition hover:border-moss"
+                  >
+                    Play
+                  </a>
+                </div>
                 <p className="text-xs text-ash">Cluster {item.cluster} · Distance {item.distance.toFixed(3)}</p>
               </div>
             ))}

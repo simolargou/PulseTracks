@@ -79,17 +79,28 @@ const Dashboard = () => {
           {searchError && <ErrorState message="Search failed." />}
           <div className="grid gap-3">
             {searchData?.items?.map((track) => (
-              <Link
+              <div
                 key={track.track_id}
-                to={`/track/${track.track_id}`}
-                className="flex items-center justify-between rounded-xl border border-emerald/30 bg-black/30 px-4 py-3 text-sm transition hover:border-moss"
+                className="flex items-center justify-between rounded-xl border border-emerald/30 bg-black/30 px-4 py-3 text-sm"
               >
-                <div>
-                  <p className="font-medium text-white">{track.track_name}</p>
-                  <p className="text-ash">{track.artists}</p>
+                <Link to={`/track/${track.track_id}`} className="flex-1 transition hover:text-moss">
+                  <div>
+                    <p className="font-medium text-white">{track.track_name}</p>
+                    <p className="text-ash">{track.artists}</p>
+                  </div>
+                </Link>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs uppercase text-ash">{track.track_genre}</span>
+                  <a
+                    href={`https://open.spotify.com/track/${track.track_id}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-emerald/30 px-3 py-1 text-xs uppercase tracking-widest text-moss transition hover:border-moss"
+                  >
+                    Play
+                  </a>
                 </div>
-                <span className="text-xs uppercase text-ash">{track.track_genre}</span>
-              </Link>
+              </div>
             ))}
           </div>
         </Card>

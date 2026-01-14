@@ -412,10 +412,10 @@ def cluster_summary(genre: Optional[str] = Query(None)) -> Dict[str, Any]:
     summaries = []
     for cluster_id in sorted(set(labels)):
         cluster_mask = labels == cluster_id
-        cluster_indices = base_df.index[cluster_mask]
+        cluster_indices = base_df.index[cluster_mask].tolist()
         if genre:
             cluster_indices = [i for i in cluster_indices if i in subset_idx]
-        if not cluster_indices:
+        if len(cluster_indices) == 0:
             continue
         cluster_positions = [artifacts["index_map"][int(i)] for i in cluster_indices]
         cluster_vectors = artifacts["scaled"][cluster_positions]

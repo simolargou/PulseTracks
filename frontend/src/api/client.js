@@ -1,7 +1,17 @@
 import axios from 'axios'
 
+const resolveBaseUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL
+  }
+  if (typeof window !== 'undefined') {
+    return `http://${window.location.hostname}:8000`
+  }
+  return 'http://localhost:8000'
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+  baseURL: resolveBaseUrl()
 })
 
 export const fetchGenres = async () => (await api.get('/genres')).data
