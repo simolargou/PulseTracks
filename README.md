@@ -74,3 +74,5 @@ docker compose up --build
 - `danceability`, `energy`, `key`, `loudness`, `mode`
 - `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`
 - `tempo`, `time_signature`
+<img width="1550" height="900" alt="demop" src="https://github.com/user-attachments/assets/d4944e21-8940-4dbd-8707-32da4436f8ab" /><img width="1628" height="891" alt="demop2" src="https://github.com/user-attachments/assets/7ce7efb8-3480-459e-bd22-f11f8329a5ad" />
+
