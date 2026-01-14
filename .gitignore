@@ -1,2 +1,2 @@
+backend/data/artifacts/*.joblib
 backend/data/tracks.csv
-backend/data/artifacts/artifacts.joblib
