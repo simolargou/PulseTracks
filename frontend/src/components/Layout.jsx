@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <header className="px-6 py-6 md:px-12 flex flex-col md:flex-row md:items-center gap-4">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-ash">PulseTracks</p>
-          <h1 className="text-3xl md:text-4xl font-display text-glow">Spotify Insight Studio</h1>
+          <h1 className="text-3xl md:text-4xl font-display text-glow">Music Insight Studio</h1>
         </div>
         <nav className="flex gap-4 md:ml-auto">
           {navItems.map((item) => (
