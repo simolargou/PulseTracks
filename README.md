@@ -79,3 +79,4 @@ docker compose up --build
 <img width="1368" height="858" alt="Screenshot 2026-01-15 at 13 51 02" src="https://github.com/user-attachments/assets/bdda892c-0a9d-46ad-b584-f86f99693460" />
 <img width="1350" height="845" alt="Screenshot 2026-01-15 at 13 54 18" src="https://github.com/user-attachments/assets/c40a03c8-3211-42b4-9fed-1d4b8f090e13" />
 
+<img width="5094" height="6281" alt="diagram" src="https://github.com/user-attachments/assets/6608f913-7c2e-42ea-99a3-4dca62eda774" />
